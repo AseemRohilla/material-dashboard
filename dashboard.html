@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Max Bupa</title>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="./material-dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.1.2/css/select.dataTables.min.css">
+    <link rel="stylesheet" href="http://cdn.datatables.net/responsive/2.0.2/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+    <!-- Compiled and minified JavaScript AngularJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+    <script src="./dashboard.js"></script>
+    <style>
+        .dataTables_wrapper {
+            width: 100%;
+        }
+
+        .contact-header {
+            float: right;
+            padding: 7px;
+            border-radius: 10px;
+            border-left: solid 1px black;
+            border-right: solid 1px black;
+            float: right;
+        }
+
+        .page-header{
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body ng-app="insuranceApp">
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <img style="user-select: none;" src="https://www.maxbupa.com/style%20library/maxbupa/images/gahome/mb-logo.png">
+                        <span class="contact-header">
+                            <i class="material-icons">contacts</i>1800-000-192</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="wrapper" ng-controller="dashboardCtrl">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header card-header-warning card-header-icon">
+                                <div class="card-icon">
+                                    <i class="material-icons">track_changes</i>
+                                </div>
+                                <p class="card-category">Target achieved</p>
+                                <h3 class="card-title">39/50
+                                </h3>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">date_range</i> Last 3 weeks
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header card-header-success card-header-icon">
+                                <div class="card-icon">
+                                    <i class="material-icons">store</i>
+                                </div>
+                                <p class="card-category">Revenue</p>
+                                <h3 class="card-title">$14,295</h3>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">date_range</i> Last 24 Hours
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header card-header-danger card-header-icon">
+                                <div class="card-icon">
+                                    <i class="material-icons">info_outline</i>
+                                </div>
+                                <p class="card-category">Customers Lost</p>
+                                <h3 class="card-title">-75</h3>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">date_range</i> Last Month
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header card-header-info card-header-icon">
+                                <div class="card-icon">
+                                    <i class="material-icons">group_add</i>
+                                </div>
+                                <p class="card-category">New Customers</p>
+                                <h3 class="card-title">+245</h3>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">date_range</i> Last Month
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card card-chart">
+                            <div class="card-header-success">
+                                <div id="container"></div>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Profits</h4>
+                                <p class="card-category">
+                                    <span class="text-success">
+                                        <i class="fa fa-long-arrow-up"></i> 55% </span> increase in profit.</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">access_time</i> updated 4 minutes ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-chart">
+                            <div class="card-header-info">
+                                <div id="containerGauge"></div>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Profits</h4>
+                                <p class="card-category">
+                                    <span class="text-success">
+                                        <i class="fa fa-long-arrow-up"></i> 55% </span> increase in profit.</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">access_time</i> updated 4 minutes ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="card card-stats">
+                            <div class="card-header card-header-warning card-header-icon">
+                                <div class="card-icon">
+                                    <i class="material-icons">grid_on</i>
+                                </div>
+                                <p class="card-category">Customers Details</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats" style="width:100%">
+                                    <table cellpadding="0" cellspacing="0" border="0" class="dataTable table table-striped" id="example" style="width:100%">
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer ">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a>
+                                Login
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                Licenses
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright pull-right">
+                    &copy;
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>, made with love by
+                    <b>Aseem Rohilla</b>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+</body>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/select/1.1.2/js/dataTables.select.min.js"></script>
+<script src="http://cdn.datatables.net/responsive/2.0.2/js/dataTables.responsive.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+
+        var dataSet = [
+            ["Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800"],
+            ["Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750"],
+            ["Ashton Cox", "Junior Technical Author", "San Francisco", "1562", "2009/01/12", "$86,000"],
+            ["Cedric Kelly", "Senior Javascript Developer", "Edinburgh", "6224", "2012/03/29", "$433,060"],
+            ["Airi Satou", "Accountant", "Tokyo", "5407", "2008/11/28", "$162,700"],
+            ["Brielle Williamson", "Integration Specialist", "New York", "4804", "2012/12/02", "$372,000"],
+            ["Herrod Chandler", "Sales Assistant", "San Francisco", "9608", "2012/08/06", "$137,500"],
+            ["Rhona Davidson", "Integration Specialist", "Tokyo", "6200", "2010/10/14", "$327,900"],
+            ["Colleen Hurst", "Javascript Developer", "San Francisco", "2360", "2009/09/15", "$205,500"],
+            ["Sonya Frost", "Software Engineer", "Edinburgh", "1667", "2008/12/13", "$103,600"],
+            ["Jena Gaines", "Office Manager", "London", "3814", "2008/12/19", "$90,560"],
+            ["Quinn Flynn", "Support Lead", "Edinburgh", "9497", "2013/03/03", "$342,000"],
+            ["Charde Marshall", "Regional Director", "San Francisco", "6741", "2008/10/16", "$470,600"],
+            ["Haley Kennedy", "Senior Marketing Designer", "London", "3597", "2012/12/18", "$313,500"],
+            ["Tatyana Fitzpatrick", "Regional Director", "London", "1965", "2010/03/17", "$385,750"],
+            ["Michael Silva", "Marketing Designer", "London", "1581", "2012/11/27", "$198,500"],
+            ["Paul Byrd", "Chief Financial Officer (CFO)", "New York", "3059", "2010/06/09", "$725,000"],
+            ["Gloria Little", "Systems Administrator", "New York", "1721", "2009/04/10", "$237,500"],
+            ["Bradley Greer", "Software Engineer", "London", "2558", "2012/10/13", "$132,000"],
+            ["Dai Rios", "Personnel Lead", "Edinburgh", "2290", "2012/09/26", "$217,500"],
+            ["Jenette Caldwell", "Development Lead", "New York", "1937", "2011/09/03", "$345,000"],
+            ["Yuri Berry", "Chief Marketing Officer (CMO)", "New York", "6154", "2009/06/25", "$675,000"],
+            ["Caesar Vance", "Pre-Sales Support", "New York", "8330", "2011/12/12", "$106,450"],
+            ["Doris Wilder", "Sales Assistant", "Sidney", "3023", "2010/09/20", "$85,600"],
+            ["Angelica Ramos", "Chief Executive Officer (CEO)", "London", "5797", "2009/10/09", "$1,200,000"],
+            ["Gavin Joyce", "Developer", "Edinburgh", "8822", "2010/12/22", "$92,575"],
+            ["Jennifer Chang", "Regional Director", "Singapore", "9239", "2010/11/14", "$357,650"],
+            ["Brenden Wagner", "Software Engineer", "San Francisco", "1314", "2011/06/07", "$206,850"],
+            ["Fiona Green", "Chief Operating Officer (COO)", "San Francisco", "2947", "2010/03/11", "$850,000"],
+            ["Shou Itou", "Regional Marketing", "Tokyo", "8899", "2011/08/14", "$163,000"],
+            ["Michelle House", "Integration Specialist", "Sidney", "2769", "2011/06/02", "$95,400"],
+            ["Suki Burks", "Developer", "London", "6832", "2009/10/22", "$114,500"],
+            ["Prescott Bartlett", "Technical Author", "London", "3606", "2011/05/07", "$145,000"],
+            ["Gavin Cortez", "Team Leader", "San Francisco", "2860", "2008/10/26", "$235,500"],
+            ["Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050"],
+            ["Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009/12/09", "$85,675"]
+        ];
+
+        var columnDefs = [{
+            title: "Name"
+        }, {
+            title: "Profession"
+        }, {
+            title: "Branch Name"
+        }, {
+            title: "Insurance Id"
+        }, {
+            title: "Insurance Start date"
+        }, {
+            title: "Income"
+        }];
+
+        var myTable;
+
+        myTable = $('#example').DataTable({
+            "sPaginationType": "full_numbers",
+            data: dataSet,
+            columns: columnDefs,
+            select: 'single',
+            responsive: true
+        });
+
+
+    });
+
+</script>
+
+</html>
